@@ -23,7 +23,7 @@ def course_list(request):
 
     total_count = Course.objects.count()
 
-    paginator = Paginator(courses_qs, 5)
+    paginator = Paginator(courses_qs, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
