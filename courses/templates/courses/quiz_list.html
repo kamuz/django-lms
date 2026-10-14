@@ -12,40 +12,17 @@
             <li class="py-3 border-b border-gray-100 dark:border-[#2c2c2c]">
                 <div class="font-medium">{{ quiz.title }}</div>
                 <div class="text-xs text-[#476582] dark:text-[#9ba9b8] mt-1">
-                    {% if quiz.lesson %}lesson: {{ quiz.lesson.title }}
-                    {% elif quiz.module %}module: {{ quiz.module.title }}
-                    {% elif quiz.course %}course: {{ quiz.course.title }}
-                    {% else %}unbound{% endif %}
+                    Course: {{ quiz.course.title }}
                 </div>
                 <div class="mt-2">
-                    {% if quiz.lesson %}
-                        <a href="{% url 'courses:take_quiz' quiz.lesson.module.course.slug quiz.lesson.slug %}"
-                           class="inline-flex items-center gap-1 text-sm text-accent hover:underline">
-                            <span>Take quiz</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    {% elif quiz.module %}
-                        <a href="{% url 'courses:take_module_quiz' quiz.module.course.slug quiz.module.slug %}"
-                           class="inline-flex items-center gap-1 text-sm text-accent hover:underline">
-                            <span>Take quiz</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    {% elif quiz.course %}
-                        <a href="{% url 'courses:take_course_quiz' quiz.course.slug %}"
-                           class="inline-flex items-center gap-1 text-sm text-accent hover:underline">
-                            <span>Take quiz</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    {% endif %}
+                    <a href="{% url 'courses:take_course_quiz' quiz.course.slug %}"
+                       class="inline-flex items-center gap-1 text-sm text-accent hover:underline">
+                        <span>Take quiz</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
                 </div>
             </li>
         {% endfor %}

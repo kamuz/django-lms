@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .forms import CustomUserCreationForm
 from .models import (
-    Category, Course, Module, Lesson,
+    Category, Course, Lesson,
     Quiz, Question, Answer,
     UserAttempt, UserAnswer, Comment,
 )
@@ -129,38 +129,6 @@ def process_quiz_submission(request, quiz):
     attempt.passed = percentage >= quiz.passing_score
     attempt.save()
     return attempt
-
-
-@login_required
-def take_quiz(request, course_slug, lesson_slug):
-    course = get_object_or_404(Course, slug=course_slug)
-    lesson = get_object_or_404(Lesson, slug=lesson_slug, module__course=course)
-    quiz = get_object_or_404(Quiz, lesson=lesson)
-
-    if request.method == 'POST':
-        attempt = process_quiz_submission(request, quiz)
-        return redirect('courses:attempt_detail', attempt_id=attempt.id)
-
-    return render(request, 'courses/take_quiz.html', {
-        'quiz': quiz,
-        'submit_url': reverse('courses:take_quiz', args=[course.slug, lesson.slug]),
-    })
-
-
-@login_required
-def take_module_quiz(request, course_slug, module_slug):
-    course = get_object_or_404(Course, slug=course_slug)
-    module = get_object_or_404(Module, slug=module_slug, course=course)
-    quiz = get_object_or_404(Quiz, module=module)
-
-    if request.method == 'POST':
-        attempt = process_quiz_submission(request, quiz)
-        return redirect('courses:attempt_detail', attempt_id=attempt.id)
-
-    return render(request, 'courses/take_quiz.html', {
-        'quiz': quiz,
-        'submit_url': reverse('courses:take_module_quiz', args=[course.slug, module.slug]),
-    })
 
 
 @login_required

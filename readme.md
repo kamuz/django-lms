@@ -2,11 +2,11 @@
 
 ## Як користуватись
 
-- Кожен крок — самодостатній: код, команди, перевірка
-- Усі файли подані **повністю** з того, що є в проєкті
+- Кроки йдуть послідовно: частина коду в наступних кроках доповнює попередню
+- У блоках із кодом можуть бути фрагменти; повний актуальний стан дивись у файлах проєкту
 - `views.py` і `urls.py` наповнюються **поступово** — по одному контролеру / маршруту за крок
 - Фікстури розбиті по моделях: `categories.json`, `courses.json`, `modules.json`, `lessons.json`, `quizzes.json`
-- **Не додаю нічого, чого немає у файлах проєкту**
+- Кроки створення проєкту та допоміжні команди описують процес розробки, а не лише поточні файли репозиторію
 
 ## План
 
@@ -946,11 +946,11 @@ python manage.py check
 
 ### 8.4 `courses/fixtures/lessons.json`
 
-Повний файл — див. у попередніх повідомленнях, де я подавав окремо `lessons.json` із Markdown-контентом.
+Файл уже є в репозиторії: [courses/fixtures/lessons.json](courses/fixtures/lessons.json). Він містить уроки з Markdown-контентом.
 
 ### 8.5 `courses/fixtures/quizzes.json`
 
-Повний файл — див. у попередніх повідомленнях, де я подавав окремо `quizzes.json` із 5 тестами + 12 питаннями + 40 відповідями.
+Файл уже є в репозиторії: [courses/fixtures/quizzes.json](courses/fixtures/quizzes.json). Він містить 5 тестів, 12 питань і 40 відповідей.
 
 ### 8.6 Перевірка JSON
 
@@ -1680,8 +1680,8 @@ def take_course_quiz(request, course_slug):
 
 ### ✅ Перевірка Кроку 14
 
-1. Увійди, відкрий урок, дійди до кінця → побачиш «Start course quiz»
-2. Клікни → форма тесту
+1. Увійди та відкрий `/quizzes/` або сторінку курсу з тестом.
+2. Перейди за посиланням тесту → відкриється форма тесту курсу.
 3. Дай відповіді → Submit → редірект (поки 404 на `attempt_detail`)
 4. У shell:
 
@@ -2400,7 +2400,7 @@ function toggleTheme() {
 
 ### 20.2 Решта шаблонів
 
-Решта шаблонів — `course_detail.html`, `lesson_detail.html`, `quiz_list.html`, `take_quiz.html`, `attempt_detail.html`, `my_results.html`, `login.html`, `register.html` — переписуються в тому ж стилі Tailwind. Кожен можна взяти з попередніх повідомлень, де я їх подавав у фінальному вигляді.
+Решта наявних шаблонів — `course_detail.html`, `lesson_detail.html`, `quiz_list.html`, `take_quiz.html`, `attempt_detail.html`, `my_results.html`, `login.html` і `register.html` — зберігаються у відповідних каталогах `courses/templates/` та `courses/templates/registration/`. У цьому гайді їхній повний вміст не наведено; орієнтуйся на файли репозиторію.
 
 **Основні класи для уніфікації:**
 
