@@ -1,87 +1,35 @@
+```gitignore
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
-# Virtual environments
-myenv/
-venv/
-env/
-ENV/
+# Virtual environment
 .venv/
+venv/
+myenv/
 
 # Django
 *.log
 local_settings.py
-db.sqlite3
 db.sqlite3-journal
-/media/
-/staticfiles/
+media/
+staticfiles/
 
 # Environment variables
 .env
 .env.*
 !.env.example
 
-# IDE / Editors
-.vscode/
-.idea/
-*.swp
-*.swo
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Linux
 *~
-.project
-.pydevproject
-.settings/
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Jupyter
-.ipynb_checkpoints/
-
-# pytest / coverage
+# Cache
 .pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-.tox/
-.nox/
-
-# mypy
 .mypy_cache/
-.dmypy.json
-dmypy.json
-
-# ruff
 .ruff_cache/
-
-# Backup files
-*.bak
-*.orig
-*.tmp
+```
