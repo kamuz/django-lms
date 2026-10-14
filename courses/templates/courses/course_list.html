@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content_full %}
+<div class="max-w-page mx-auto px-4 py-8">
+    <h1 class="text-3xl font-semibold mb-6 pb-2">Courses</h1>
+
+    {% if not user.is_authenticated %}
+        <p class="mb-6 text-[#476582] dark:text-[#9ba9b8]">
+            Please <a href="{% url 'login' %}?next={{ request.path }}" class="text-accent hover:underline">login</a> to view course content.
+        </p>
+    {% endif %}
+
+    <div class="mb-8 flex flex-wrap items-center gap-2 text-sm">
+        <a href="{% url 'courses:course_list' %}"
+           class="inline-flex items-center gap-1 px-3 py-1.5 rounded font-medium transition-colors
+                  {% if not selected_category %}bg-accent text-white hover:bg-accent-dark{% else %}bg-white dark:bg-[#252525] text-[#2c3e50] dark:text-[#eaecef] border border-gray-200 dark:border-[#2c2c2c] hover:border-gray-300 dark:hover:border-[#3a3a3a]{% endif %}">
+            All
+            <span class="text-xs opacity-70">{{ total_count }}</span>
+        </a>
+
+        {% for category in categories %}
+            <a href="{% url 'courses:course_list' %}?category={{ category.slug }}"
+               class="inline-flex items-center gap-1 px-3 py-1.5 rounded font-medium transition-colors
+                      {% if selected_category == category.slug %}bg-accent text-white hover:bg-accent-dark{% else %}bg-white dark:bg-[#252525] text-[#2c3e50] dark:text-[#eaecef] border border-gray-200 dark:border-[#2c2c2c] hover:border-gray-300 dark:hover:border-[#3a3a3a]{% endif %}">
+                {{ category.title }}
+                <span class="text-xs opacity-70">{{ category.course_count }}</span>
+            </a>
+        {% endfor %}
+    </div>
+
+    <ul class="space-y-3">
+    {% for course in page_obj %}
+        <li class="pb-3 border-b border-gray-100 dark:border-[#2c2c2c]">
+            <a href="{% url 'courses:course_detail' course.slug %}" class="text-lg font-medium text-accent hover:underline">
+                {{ course.title }}
+            </a>
+            {% if course.category %}
+                <span class="ml-2 text-xs text-[#476582] dark:text-[#9ba9b8]">
+                    · {{ course.category.title }}
+                </span>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li class="text-[#476582] dark:text-[#9ba9b8]">No courses in this category.</li>
+    {% endfor %}
+    </ul>
+
+    {% if page_obj.has_other_pages %}
+        <nav class="mt-8 flex justify-center items-center gap-2 text-sm">
+            {% if page_obj.has_previous %}
+                <a href="?{% if selected_category %}category={{ selected_category }}&{% endif %}page={{ page_obj.previous_page_number }}"
+                   class="inline-flex items-center gap-1 px-3 py-1 rounded border border-gray-200 dark:border-[#2c2c2c] text-[#476582] dark:text-[#9ba9b8] hover:text-accent hover:border-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <polyline points="11 17 6 12 11 7"></polyline>
+                        <polyline points="18 17 13 12 18 7"></polyline>
+                    </svg>
+                    <span>Prev</span>
+                </a>
+            {% else %}
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded border border-gray-100 dark:border-[#222] text-gray-300 dark:text-[#444]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <polyline points="11 17 6 12 11 7"></polyline>
+                        <polyline points="18 17 13 12 18 7"></polyline>
+                    </svg>
+                    <span>Prev</span>
+                </span>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if num == page_obj.number %}
+                    <span class="px-3 py-1 rounded bg-accent text-white">{{ num }}</span>
+                {% else %}
+                    <a href="?{% if selected_category %}category={{ selected_category }}&{% endif %}page={{ num }}"
+                       class="px-3 py-1 rounded border border-gray-200 dark:border-[#2c2c2c] text-[#476582] dark:text-[#9ba9b8] hover:text-accent hover:border-accent">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a href="?{% if selected_category %}category={{ selected_category }}&{% endif %}page={{ page_obj.next_page_number }}"
+                   class="inline-flex items-center gap-1 px-3 py-1 rounded border border-gray-200 dark:border-[#2c2c2c] text-[#476582] dark:text-[#9ba9b8] hover:text-accent hover:border-accent">
+                    <span>Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <polyline points="13 17 18 12 13 7"></polyline>
+                        <polyline points="6 17 11 12 6 7"></polyline>
+                    </svg>
+                </a>
+            {% else %}
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded border border-gray-100 dark:border-[#222] text-gray-300 dark:text-[#444]">
+                    <span>Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <polyline points="13 17 18 12 13 7"></polyline>
+                        <polyline points="6 17 11 12 6 7"></polyline>
+                    </svg>
+                </span>
+            {% endif %}
+        </nav>
+    {% endif %}
+</div>
+{% endblock %}

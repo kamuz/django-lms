@@ -1,0 +1,654 @@
+[
+  {
+    "model": "courses.course",
+    "pk": 1,
+    "fields": {
+      "title": "Django Basics",
+      "slug": "django-basics",
+      "description": "Introduction to Django framework: models, views, templates, admin.",
+      "category": 2,
+      "created_at": "2026-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 2,
+    "fields": {
+      "title": "Python Advanced",
+      "slug": "python-advanced",
+      "description": "Advanced Python topics: decorators, generators, async, typing.",
+      "category": 1,
+      "created_at": "2026-01-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 3,
+    "fields": {
+      "title": "Web Development Fundamentals",
+      "slug": "web-development-fundamentals",
+      "description": "HTML, HTTP, client-server basics, and how the web works.",
+      "category": 2,
+      "created_at": "2026-01-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 4,
+    "fields": {
+      "title": "Python for Beginners",
+      "slug": "python-for-beginners",
+      "description": "Start from zero: variables, loops, functions, and your first scripts.",
+      "category": 1,
+      "created_at": "2026-01-04T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 5,
+    "fields": {
+      "title": "Databases and SQL",
+      "slug": "databases-and-sql",
+      "description": "Relational databases, SQL queries, indexes, and normalization.",
+      "category": 3,
+      "created_at": "2026-01-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 6,
+    "fields": {
+      "title": "Git and Version Control",
+      "slug": "git-and-version-control",
+      "description": "Commits, branches, merges, remotes, and collaboration workflows.",
+      "category": 5,
+      "created_at": "2026-01-06T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 7,
+    "fields": {
+      "title": "REST API Design",
+      "slug": "rest-api-design",
+      "description": "Resources, HTTP methods, status codes, versioning, and best practices.",
+      "category": 2,
+      "created_at": "2026-01-07T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 8,
+    "fields": {
+      "title": "Testing in Python",
+      "slug": "testing-in-python",
+      "description": "Unit tests, pytest, fixtures, mocks, and test-driven development.",
+      "category": 1,
+      "created_at": "2026-01-08T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 9,
+    "fields": {
+      "title": "Linux Command Line",
+      "slug": "linux-command-line",
+      "description": "Files, permissions, processes, pipes, and shell scripting basics.",
+      "category": 4,
+      "created_at": "2026-01-09T10:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 10,
+    "fields": {
+      "title": "Deployment and DevOps",
+      "slug": "deployment-and-devops",
+      "description": "Servers, Docker, CI/CD, environment variables, and going live.",
+      "category": 4,
+      "created_at": "2026-01-10T10:00:00Z"
+    }
+  },
+
+  {
+    "model": "courses.module",
+    "pk": 1,
+    "fields": {
+      "course": 1,
+      "title": "Getting Started",
+      "slug": "getting-started",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 2,
+    "fields": {
+      "course": 1,
+      "title": "Models and Database",
+      "slug": "models-and-database",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 3,
+    "fields": {
+      "course": 1,
+      "title": "Views and Templates",
+      "slug": "views-and-templates",
+      "order": 3
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 4,
+    "fields": {
+      "course": 2,
+      "title": "Decorators and Closures",
+      "slug": "decorators-and-closures",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 5,
+    "fields": {
+      "course": 2,
+      "title": "Generators and Iterators",
+      "slug": "generators-and-iterators",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 6,
+    "fields": {
+      "course": 4,
+      "title": "First Steps",
+      "slug": "first-steps",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 7,
+    "fields": {
+      "course": 4,
+      "title": "Control Flow",
+      "slug": "control-flow",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 8,
+    "fields": {
+      "course": 3,
+      "title": "How the Web Works",
+      "slug": "how-the-web-works",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 9,
+    "fields": {
+      "course": 3,
+      "title": "HTML Basics",
+      "slug": "html-basics",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 10,
+    "fields": {
+      "course": 5,
+      "title": "Relational Model",
+      "slug": "relational-model",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 11,
+    "fields": {
+      "course": 5,
+      "title": "SQL Queries",
+      "slug": "sql-queries",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 12,
+    "fields": {
+      "course": 6,
+      "title": "Basic Commands",
+      "slug": "basic-commands",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 13,
+    "fields": {
+      "course": 6,
+      "title": "Branching and Merging",
+      "slug": "branching-and-merging",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 14,
+    "fields": {
+      "course": 7,
+      "title": "HTTP and Resources",
+      "slug": "http-and-resources",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 15,
+    "fields": {
+      "course": 7,
+      "title": "Status Codes and Errors",
+      "slug": "status-codes-and-errors",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 16,
+    "fields": {
+      "course": 8,
+      "title": "Unit Testing",
+      "slug": "unit-testing",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 17,
+    "fields": {
+      "course": 8,
+      "title": "Mocks and Fixtures",
+      "slug": "mocks-and-fixtures",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 18,
+    "fields": {
+      "course": 9,
+      "title": "Files and Directories",
+      "slug": "files-and-directories",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 19,
+    "fields": {
+      "course": 9,
+      "title": "Pipes and Redirection",
+      "slug": "pipes-and-redirection",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 20,
+    "fields": {
+      "course": 10,
+      "title": "Servers and Environments",
+      "slug": "servers-and-environments",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.module",
+    "pk": 21,
+    "fields": {
+      "course": 10,
+      "title": "CI and CD",
+      "slug": "ci-and-cd",
+      "order": 2
+    }
+  },
+
+  {
+    "model": "courses.lesson",
+    "pk": 1,
+    "fields": {
+      "module": 1,
+      "title": "What is Django",
+      "slug": "what-is-django",
+      "content": "Django is a high-level Python web framework that encourages rapid development.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 2,
+    "fields": {
+      "module": 1,
+      "title": "Installing Django",
+      "slug": "installing-django",
+      "content": "Install Django with pip: pip install django. Then create a project with django-admin startproject.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 3,
+    "fields": {
+      "module": 2,
+      "title": "Your First Model",
+      "slug": "your-first-model",
+      "content": "Models are Python classes that map to database tables. Each attribute is a field.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 4,
+    "fields": {
+      "module": 2,
+      "title": "Migrations Explained",
+      "slug": "migrations-explained",
+      "content": "Migrations are Django's way of propagating changes to your models into the database schema.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 5,
+    "fields": {
+      "module": 3,
+      "title": "Function Views",
+      "slug": "function-views",
+      "content": "A view is a Python function that takes a web request and returns a web response.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 6,
+    "fields": {
+      "module": 3,
+      "title": "Template Basics",
+      "slug": "template-basics",
+      "content": "Templates are HTML files with special tags that Django renders with context data.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 7,
+    "fields": {
+      "module": 4,
+      "title": "Understanding Decorators",
+      "slug": "understanding-decorators",
+      "content": "A decorator is a function that takes another function and extends its behavior.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 8,
+    "fields": {
+      "module": 5,
+      "title": "Generator Functions",
+      "slug": "generator-functions",
+      "content": "Generators produce values lazily using the yield keyword instead of returning a list.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 9,
+    "fields": {
+      "module": 6,
+      "title": "Variables and Types",
+      "slug": "variables-and-types",
+      "content": "Python is dynamically typed. Variables are names bound to objects.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 10,
+    "fields": {
+      "module": 7,
+      "title": "If Statements",
+      "slug": "if-statements",
+      "content": "Conditional execution with if, elif, else. Indentation defines blocks in Python.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 11,
+    "fields": {
+      "module": 8,
+      "title": "Client and Server",
+      "slug": "client-and-server",
+      "content": "The client sends a request, the server responds. HTTP is the protocol between them.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 12,
+    "fields": {
+      "module": 8,
+      "title": "HTTP Methods",
+      "slug": "http-methods",
+      "content": "GET, POST, PUT, DELETE — each method has a semantic meaning in HTTP.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 13,
+    "fields": {
+      "module": 9,
+      "title": "Tags and Elements",
+      "slug": "tags-and-elements",
+      "content": "HTML documents are built from nested elements, each defined by tags.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 14,
+    "fields": {
+      "module": 10,
+      "title": "Tables and Rows",
+      "slug": "tables-and-rows",
+      "content": "Relational databases store data in tables with rows and columns.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 15,
+    "fields": {
+      "module": 10,
+      "title": "Primary and Foreign Keys",
+      "slug": "primary-and-foreign-keys",
+      "content": "Primary keys uniquely identify rows. Foreign keys link rows across tables.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 16,
+    "fields": {
+      "module": 11,
+      "title": "SELECT Statements",
+      "slug": "select-statements",
+      "content": "SELECT retrieves data from one or more tables. WHERE filters rows.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 17,
+    "fields": {
+      "module": 11,
+      "title": "JOIN Operations",
+      "slug": "join-operations",
+      "content": "JOIN combines rows from two tables based on a related column.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 18,
+    "fields": {
+      "module": 12,
+      "title": "Git Init and Commit",
+      "slug": "git-init-and-commit",
+      "content": "git init creates a repository. git commit saves a snapshot of your changes.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 19,
+    "fields": {
+      "module": 12,
+      "title": "Viewing History",
+      "slug": "viewing-history",
+      "content": "git log shows commit history. git diff shows changes between commits.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 20,
+    "fields": {
+      "module": 13,
+      "title": "Creating Branches",
+      "slug": "creating-branches",
+      "content": "git branch creates a branch. git checkout switches between branches.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 21,
+    "fields": {
+      "module": 14,
+      "title": "Resources and URIs",
+      "slug": "resources-and-uris",
+      "content": "REST models everything as a resource, identified by a URI.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 22,
+    "fields": {
+      "module": 14,
+      "title": "Stateless Requests",
+      "slug": "stateless-requests",
+      "content": "Each request contains all information needed to process it — no session state.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 23,
+    "fields": {
+      "module": 15,
+      "title": "2xx and 4xx Codes",
+      "slug": "2xx-and-4xx-codes",
+      "content": "2xx means success. 4xx means client error (e.g. 404 Not Found, 400 Bad Request).",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 24,
+    "fields": {
+      "module": 16,
+      "title": "Writing Your First Test",
+      "slug": "writing-your-first-test",
+      "content": "A test is a function that asserts behavior. Use assert to check expected results.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 25,
+    "fields": {
+      "module": 17,
+      "title": "Mocks and Patches",
+      "slug": "mocks-and-patches",
+      "content": "Mocks replace real objects in tests to isolate behavior and avoid side effects.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 26,
+    "fields": {
+      "module": 18,
+      "title": "ls, cd, pwd",
+      "slug": "ls-cd-pwd",
+      "content": "ls lists files. cd changes directory. pwd prints the current directory.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 27,
+    "fields": {
+      "module": 18,
+      "title": "File Permissions",
+      "slug": "file-permissions",
+      "content": "chmod changes file mode. chown changes owner. Permissions are rwx for user/group/other.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 28,
+    "fields": {
+      "module": 19,
+      "title": "The Pipe Operator",
+      "slug": "the-pipe-operator",
+      "content": "The | operator sends stdout of one command to stdin of another.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 29,
+    "fields": {
+      "module": 20,
+      "title": "Environment Variables",
+      "slug": "environment-variables",
+      "content": "Environment variables configure apps without changing code. Use os.environ in Python.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 30,
+    "fields": {
+      "module": 21,
+      "title": "Continuous Integration",
+      "slug": "continuous-integration",
+      "content": "CI runs tests automatically on every push. Catches regressions early.",
+      "order": 1
+    }
+  }
+]

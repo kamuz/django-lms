@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}My Results{% endblock %}
+
+{% block content_full %}
+<div class="max-w-page mx-auto px-4 py-8">
+
+    <h1 class="text-3xl font-semibold mb-8">My Results</h1>
+
+    {% if attempts %}
+        <div class="mb-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-gray-50 dark:bg-[#252525] rounded-lg p-4">
+                <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Total attempts</div>
+                <div class="text-2xl font-semibold">{{ attempts.count }}</div>
+            </div>
+            <div class="bg-gray-50 dark:bg-[#252525] rounded-lg p-4">
+                <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Passed</div>
+                <div class="text-2xl font-semibold text-accent">{{ passed_count }}</div>
+            </div>
+            <div class="bg-gray-50 dark:bg-[#252525] rounded-lg p-4">
+                <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Failed</div>
+                <div class="text-2xl font-semibold text-red-500">{{ failed_count }}</div>
+            </div>
+            <div class="bg-gray-50 dark:bg-[#252525] rounded-lg p-4">
+                <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Average score</div>
+                <div class="text-2xl font-semibold">{{ average_score }}%</div>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            {% for attempt in attempts %}
+                <a href="{% url 'courses:attempt_detail' attempt.id %}"
+                   class="block bg-gray-50 dark:bg-[#252525] rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-[#2f2f2f] transition-colors">
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex-1 min-w-0">
+                            <div class="font-medium truncate">{{ attempt.quiz.title }}</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                {{ attempt.quiz.course.title }}
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-semibold {% if attempt.passed %}text-accent{% else %}text-red-500{% endif %}">
+                                {{ attempt.score }}%
+                            </span>
+
+                            {% if attempt.passed %}
+                                <span class="px-2.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                                    Passed
+                                </span>
+                            {% else %}
+                                <span class="px-2.5 py-1 rounded-full bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-medium">
+                                    Failed
+                                </span>
+                            {% endif %}
+
+                            <span class="hidden sm:inline text-xs text-gray-500 dark:text-gray-400">
+                                {{ attempt.created_at|date:"M d, Y" }}
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="border border-dashed border-gray-300 dark:border-[#3a3a3a] rounded-lg p-12 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 mx-auto mb-4 text-gray-300 dark:text-[#3a3a3a]">
+                <path d="M9 11H3v10h6V11z"></path>
+                <path d="M21 3h-6v18h6V3z"></path>
+                <path d="M15 7H9v14h6V7z"></path>
+            </svg>
+            <h2 class="text-xl font-semibold mb-2">No attempts yet</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-6">
+                You haven't taken any quizzes yet. Explore courses and test your knowledge.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="{% url 'courses:course_list' %}"
+                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white hover:bg-accent-dark font-medium text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    <span>All courses</span>
+                </a>
+
+                <a href="{% url 'courses:quiz_list' %}"
+                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-100 dark:bg-[#2c2c2c] text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-[#3a3a3a] font-medium text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <path d="M9 11H3v10h6V11z"></path>
+                        <path d="M21 3h-6v18h6V3z"></path>
+                        <path d="M15 7H9v14h6V7z"></path>
+                    </svg>
+                    <span>All quizzes</span>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

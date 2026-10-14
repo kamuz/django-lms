@@ -1,0 +1,107 @@
+[
+  {
+    "model": "courses.module",
+    "pk": 1,
+    "fields": { "course": 1, "title": "Getting Started", "slug": "getting-started", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 2,
+    "fields": { "course": 1, "title": "Models and Database", "slug": "models-and-database", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 3,
+    "fields": { "course": 1, "title": "Views and Templates", "slug": "views-and-templates", "order": 3 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 4,
+    "fields": { "course": 2, "title": "Decorators and Closures", "slug": "decorators-and-closures", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 5,
+    "fields": { "course": 2, "title": "Generators and Iterators", "slug": "generators-and-iterators", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 6,
+    "fields": { "course": 4, "title": "First Steps", "slug": "first-steps", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 7,
+    "fields": { "course": 4, "title": "Control Flow", "slug": "control-flow", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 8,
+    "fields": { "course": 3, "title": "How the Web Works", "slug": "how-the-web-works", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 9,
+    "fields": { "course": 3, "title": "HTML Basics", "slug": "html-basics", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 10,
+    "fields": { "course": 5, "title": "Relational Model", "slug": "relational-model", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 11,
+    "fields": { "course": 5, "title": "SQL Queries", "slug": "sql-queries", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 12,
+    "fields": { "course": 6, "title": "Basic Commands", "slug": "basic-commands", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 13,
+    "fields": { "course": 6, "title": "Branching and Merging", "slug": "branching-and-merging", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 14,
+    "fields": { "course": 7, "title": "HTTP and Resources", "slug": "http-and-resources", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 15,
+    "fields": { "course": 7, "title": "Status Codes and Errors", "slug": "status-codes-and-errors", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 16,
+    "fields": { "course": 8, "title": "Unit Testing", "slug": "unit-testing", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 17,
+    "fields": { "course": 8, "title": "Mocks and Fixtures", "slug": "mocks-and-fixtures", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 18,
+    "fields": { "course": 9, "title": "Files and Directories", "slug": "files-and-directories", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 19,
+    "fields": { "course": 9, "title": "Pipes and Redirection", "slug": "pipes-and-redirection", "order": 2 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 20,
+    "fields": { "course": 10, "title": "Servers and Environments", "slug": "servers-and-environments", "order": 1 }
+  },
+  {
+    "model": "courses.module",
+    "pk": 21,
+    "fields": { "course": 10, "title": "CI and CD", "slug": "ci-and-cd", "order": 2 }
+  }
+]

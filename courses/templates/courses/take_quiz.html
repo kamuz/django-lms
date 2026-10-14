@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ quiz.title }}{% endblock %}
+
+{% block content_full %}
+<div class="max-w-page mx-auto px-4 py-8">
+    <h1 class="text-3xl font-semibold mb-6 pb-2 border-b border-gray-200 dark:border-[#2c2c2c]">{{ quiz.title }}</h1>
+
+    <form method="post" action="{{ submit_url }}" class="space-y-6">
+    {% csrf_token %}
+    {% for question in quiz.questions.all %}
+        <fieldset class="border-b border-gray-100 dark:border-[#2c2c2c] pb-4">
+            <legend class="font-medium mb-3">{{ forloop.counter }}. {{ question.text }}</legend>
+            <div class="space-y-2 text-sm">
+            {% if question.question_type == 'single' %}
+                {% for answer in question.answers.all %}
+                    <label class="flex items-start gap-2 cursor-pointer hover:text-accent">
+                        <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}"
+                               class="mt-1 accent-[#3eaf7c]">
+                        <span>{{ answer.text }}</span>
+                    </label>
+                {% endfor %}
+            {% else %}
+                {% for answer in question.answers.all %}
+                    <label class="flex items-start gap-2 cursor-pointer hover:text-accent">
+                        <input type="checkbox" name="question_{{ question.id }}" value="{{ answer.id }}"
+                               class="mt-1 accent-[#3eaf7c]">
+                        <span>{{ answer.text }}</span>
+                    </label>
+                {% endfor %}
+            {% endif %}
+            </div>
+        </fieldset>
+    {% endfor %}
+
+    <button type="submit"
+            class="px-6 py-2 rounded bg-accent text-white hover:bg-accent-dark font-medium">
+        Submit
+    </button>
+    </form>
+</div>
+{% endblock %}

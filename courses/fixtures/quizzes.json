@@ -1,0 +1,297 @@
+[
+  {
+    "model": "courses.quiz",
+    "pk": 1,
+    "fields": { "title": "Django Basics Course Quiz", "course": 1, "passing_score": 70 }
+  },
+  {
+    "model": "courses.quiz",
+    "pk": 2,
+    "fields": { "title": "Python Advanced Course Quiz", "course": 2, "passing_score": 70 }
+  },
+  {
+    "model": "courses.quiz",
+    "pk": 3,
+    "fields": { "title": "Python for Beginners Course Quiz", "course": 4, "passing_score": 60 }
+  },
+  {
+    "model": "courses.quiz",
+    "pk": 4,
+    "fields": { "title": "Databases and SQL Course Quiz", "course": 5, "passing_score": 70 }
+  },
+  {
+    "model": "courses.quiz",
+    "pk": 5,
+    "fields": { "title": "Git and Version Control Course Quiz", "course": 6, "passing_score": 60 }
+  },
+
+  {
+    "model": "courses.question",
+    "pk": 1,
+    "fields": { "quiz": 1, "text": "What is Django?", "question_type": "single", "order": 1 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 2,
+    "fields": { "quiz": 1, "text": "Which of these are Django components?", "question_type": "multiple", "order": 2 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 3,
+    "fields": { "quiz": 1, "text": "Which command creates a new Django project?", "question_type": "single", "order": 3 }
+  },
+
+  {
+    "model": "courses.question",
+    "pk": 4,
+    "fields": { "quiz": 2, "text": "What does a Python decorator do?", "question_type": "single", "order": 1 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 5,
+    "fields": { "quiz": 2, "text": "Which of these are Python generator features?", "question_type": "multiple", "order": 2 }
+  },
+
+  {
+    "model": "courses.question",
+    "pk": 6,
+    "fields": { "quiz": 3, "text": "Which keyword defines a function in Python?", "question_type": "single", "order": 1 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 7,
+    "fields": { "quiz": 3, "text": "Which of these are valid Python data types?", "question_type": "multiple", "order": 2 }
+  },
+
+  {
+    "model": "courses.question",
+    "pk": 8,
+    "fields": { "quiz": 4, "text": "What does SQL stand for?", "question_type": "single", "order": 1 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 9,
+    "fields": { "quiz": 4, "text": "Which of these are SQL JOIN types?", "question_type": "multiple", "order": 2 }
+  },
+
+  {
+    "model": "courses.question",
+    "pk": 10,
+    "fields": { "quiz": 5, "text": "Which command initializes a new Git repository?", "question_type": "single", "order": 1 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 11,
+    "fields": { "quiz": 5, "text": "Which of these are Git commands?", "question_type": "multiple", "order": 2 }
+  },
+  {
+    "model": "courses.question",
+    "pk": 12,
+    "fields": { "quiz": 5, "text": "What is a Git branch?", "question_type": "single", "order": 3 }
+  },
+
+  {
+    "model": "courses.answer",
+    "pk": 1,
+    "fields": { "question": 1, "text": "A Python web framework", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 2,
+    "fields": { "question": 1, "text": "A JavaScript library", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 3,
+    "fields": { "question": 1, "text": "A database engine", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 4,
+    "fields": { "question": 2, "text": "ORM", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 5,
+    "fields": { "question": 2, "text": "Template engine", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 6,
+    "fields": { "question": 2, "text": "React", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 7,
+    "fields": { "question": 2, "text": "Admin panel", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 8,
+    "fields": { "question": 3, "text": "django-admin startproject", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 9,
+    "fields": { "question": 3, "text": "django-admin createproject", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 10,
+    "fields": { "question": 3, "text": "python manage.py startapp", "is_correct": false }
+  },
+
+  {
+    "model": "courses.answer",
+    "pk": 11,
+    "fields": { "question": 4, "text": "Extends the behavior of a function", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 12,
+    "fields": { "question": 4, "text": "Deletes a function", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 13,
+    "fields": { "question": 4, "text": "Renames a function", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 14,
+    "fields": { "question": 5, "text": "Uses the yield keyword", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 15,
+    "fields": { "question": 5, "text": "Produces values lazily", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 16,
+    "fields": { "question": 5, "text": "Always returns a list", "is_correct": false }
+  },
+
+  {
+    "model": "courses.answer",
+    "pk": 17,
+    "fields": { "question": 6, "text": "def", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 18,
+    "fields": { "question": 6, "text": "func", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 19,
+    "fields": { "question": 6, "text": "function", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 20,
+    "fields": { "question": 7, "text": "int", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 21,
+    "fields": { "question": 7, "text": "str", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 22,
+    "fields": { "question": 7, "text": "list", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 23,
+    "fields": { "question": 7, "text": "number", "is_correct": false }
+  },
+
+  {
+    "model": "courses.answer",
+    "pk": 24,
+    "fields": { "question": 8, "text": "Structured Query Language", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 25,
+    "fields": { "question": 8, "text": "Simple Query Language", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 26,
+    "fields": { "question": 8, "text": "Standard Question Language", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 27,
+    "fields": { "question": 9, "text": "INNER JOIN", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 28,
+    "fields": { "question": 9, "text": "LEFT JOIN", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 29,
+    "fields": { "question": 9, "text": "RIGHT JOIN", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 30,
+    "fields": { "question": 9, "text": "MIDDLE JOIN", "is_correct": false }
+  },
+
+  {
+    "model": "courses.answer",
+    "pk": 31,
+    "fields": { "question": 10, "text": "git init", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 32,
+    "fields": { "question": 10, "text": "git start", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 33,
+    "fields": { "question": 10, "text": "git create", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 34,
+    "fields": { "question": 11, "text": "git commit", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 35,
+    "fields": { "question": 11, "text": "git push", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 36,
+    "fields": { "question": 11, "text": "git merge", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 37,
+    "fields": { "question": 11, "text": "git save", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 38,
+    "fields": { "question": 12, "text": "A parallel line of development", "is_correct": true }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 39,
+    "fields": { "question": 12, "text": "A copy of the whole project", "is_correct": false }
+  },
+  {
+    "model": "courses.answer",
+    "pk": 40,
+    "fields": { "question": 12, "text": "A type of commit", "is_correct": false }
+  }
+]

@@ -1,0 +1,332 @@
+[
+  {
+    "model": "courses.lesson",
+    "pk": 1,
+    "fields": {
+      "module": 1,
+      "title": "What is Django",
+      "slug": "what-is-django",
+      "content": "# What is Django\n\nDjango is a **high-level** Python web framework that encourages rapid development.\n\n## Key features\n\n- ORM for database access\n- Template engine\n- Automatic admin panel\n- URL routing\n\nRead more at the [official documentation](https://docs.djangoproject.com/).",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 2,
+    "fields": {
+      "module": 1,
+      "title": "Installing Django",
+      "slug": "installing-django",
+      "content": "# Installing Django\n\nInstall Django with pip:\n\n```bash\npip install django\n```\n\nThen create a new project:\n\n```bash\ndjango-admin startproject config .\n```\n\nRun the development server:\n\n```bash\npython manage.py runserver\n```",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 3,
+    "fields": {
+      "module": 2,
+      "title": "Your First Model",
+      "slug": "your-first-model",
+      "content": "# Your First Model\n\nModels are Python classes that map to database tables.\n\nEach attribute of the class is a field.\n\n```python\nfrom django.db import models\n\n\nclass Course(models.Model):\n    title = models.CharField(max_length=200)\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 4,
+    "fields": {
+      "module": 2,
+      "title": "Migrations Explained",
+      "slug": "migrations-explained",
+      "content": "# Migrations Explained\n\nMigrations are Django's way of propagating changes to your models into the database schema.\n\n## Commands\n\n- `makemigrations` — create migration files\n- `migrate` — apply migrations to the database\n- `showmigrations` — list all migrations and their status",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 5,
+    "fields": {
+      "module": 3,
+      "title": "Function Views",
+      "slug": "function-views",
+      "content": "# Function Views\n\nA view is a Python function that takes a web request and returns a web response.\n\n```python\nfrom django.shortcuts import render\n\n\ndef index(request):\n    return render(request, 'index.html')\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 6,
+    "fields": {
+      "module": 3,
+      "title": "Template Basics",
+      "slug": "template-basics",
+      "content": "# Template Basics\n\nTemplates are HTML files with special tags that Django renders with context data.\n\n## Common tags\n\n- `{% raw %}{{ variable }}{% endraw %}` — output a value\n- `{% raw %}{% if condition %}{% endraw %}` — conditional\n- `{% raw %}{% for item in list %}{% endraw %}` — loop",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 7,
+    "fields": {
+      "module": 4,
+      "title": "Understanding Decorators",
+      "slug": "understanding-decorators",
+      "content": "# Understanding Decorators\n\nA decorator is a function that takes another function and extends its behavior without modifying it.\n\n```python\ndef my_decorator(func):\n    def wrapper():\n        print('Before')\n        func()\n        print('After')\n    return wrapper\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 8,
+    "fields": {
+      "module": 5,
+      "title": "Generator Functions",
+      "slug": "generator-functions",
+      "content": "# Generator Functions\n\nGenerators produce values lazily using the `yield` keyword instead of returning a list.\n\n```python\ndef count_up(n):\n    for i in range(n):\n        yield i\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 9,
+    "fields": {
+      "module": 6,
+      "title": "Variables and Types",
+      "slug": "variables-and-types",
+      "content": "# Variables and Types\n\nPython is **dynamically typed**. Variables are names bound to objects.\n\n## Common types\n\n- `int` — integers\n- `float` — floating point numbers\n- `str` — strings\n- `list` — ordered collections\n- `dict` — key-value mappings",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 10,
+    "fields": {
+      "module": 7,
+      "title": "If Statements",
+      "slug": "if-statements",
+      "content": "# If Statements\n\nConditional execution uses `if`, `elif`, `else`. Indentation defines blocks in Python.\n\n```python\nx = 10\nif x > 5:\n    print('big')\nelse:\n    print('small')\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 11,
+    "fields": {
+      "module": 8,
+      "title": "Client and Server",
+      "slug": "client-and-server",
+      "content": "# Client and Server\n\nThe client sends a request, the server responds.\n\nHTTP is the protocol between them.\n\n## Request flow\n\n- Client (browser) sends request\n- Server processes it\n- Server sends back response\n- Client renders the result",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 12,
+    "fields": {
+      "module": 8,
+      "title": "HTTP Methods",
+      "slug": "http-methods",
+      "content": "# HTTP Methods\n\nEach method has a semantic meaning:\n\n- `GET` — retrieve data\n- `POST` — create data\n- `PUT` — replace data\n- `PATCH` — update part of data\n- `DELETE` — remove data",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 13,
+    "fields": {
+      "module": 9,
+      "title": "Tags and Elements",
+      "slug": "tags-and-elements",
+      "content": "# Tags and Elements\n\nHTML documents are built from nested elements, each defined by tags.\n\n```html\n<div class=\"container\">\n    <h1>Hello</h1>\n    <p>World</p>\n</div>\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 14,
+    "fields": {
+      "module": 10,
+      "title": "Tables and Rows",
+      "slug": "tables-and-rows",
+      "content": "# Tables and Rows\n\nRelational databases store data in **tables** with **rows** and **columns**.\n\nEach row is a record, each column is a field.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 15,
+    "fields": {
+      "module": 10,
+      "title": "Primary and Foreign Keys",
+      "slug": "primary-and-foreign-keys",
+      "content": "# Primary and Foreign Keys\n\n- **Primary key** — uniquely identifies a row in a table\n- **Foreign key** — links a row to a row in another table\n\nThese keys enforce referential integrity.",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 16,
+    "fields": {
+      "module": 11,
+      "title": "SELECT Statements",
+      "slug": "select-statements",
+      "content": "# SELECT Statements\n\n`SELECT` retrieves data from one or more tables. `WHERE` filters rows.\n\n```sql\nSELECT title, description\nFROM courses\nWHERE category_id = 1;\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 17,
+    "fields": {
+      "module": 11,
+      "title": "JOIN Operations",
+      "slug": "join-operations",
+      "content": "# JOIN Operations\n\n`JOIN` combines rows from two tables based on a related column.\n\n```sql\nSELECT c.title, m.title\nFROM courses c\nJOIN modules m ON m.course_id = c.id;\n```",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 18,
+    "fields": {
+      "module": 12,
+      "title": "Git Init and Commit",
+      "slug": "git-init-and-commit",
+      "content": "# Git Init and Commit\n\n`git init` creates a repository. `git commit` saves a snapshot of your changes.\n\n```bash\ngit init\ngit add .\ngit commit -m \"Initial commit\"\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 19,
+    "fields": {
+      "module": 12,
+      "title": "Viewing History",
+      "slug": "viewing-history",
+      "content": "# Viewing History\n\n- `git log` — show commit history\n- `git diff` — show changes between commits\n- `git show` — show details of a commit",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 20,
+    "fields": {
+      "module": 13,
+      "title": "Creating Branches",
+      "slug": "creating-branches",
+      "content": "# Creating Branches\n\n- `git branch name` — create a branch\n- `git checkout name` — switch to it\n- `git merge name` — merge into current branch\n\n```bash\ngit branch feature\ngit checkout feature\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 21,
+    "fields": {
+      "module": 14,
+      "title": "Resources and URIs",
+      "slug": "resources-and-uris",
+      "content": "# Resources and URIs\n\nREST models everything as a **resource**, identified by a URI.\n\nExamples:\n\n- `/courses` — collection of courses\n- `/courses/1` — single course\n- `/courses/1/modules` — modules of a course",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 22,
+    "fields": {
+      "module": 14,
+      "title": "Stateless Requests",
+      "slug": "stateless-requests",
+      "content": "# Stateless Requests\n\nEach request contains all information needed to process it — **no session state** on the server.\n\nAuthentication is sent with every request (tokens, headers).",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 23,
+    "fields": {
+      "module": 15,
+      "title": "2xx and 4xx Codes",
+      "slug": "2xx-and-4xx-codes",
+      "content": "# 2xx and 4xx Codes\n\n- **2xx** — success\n- **4xx** — client error\n\nCommon codes:\n\n- `200 OK`\n- `201 Created`\n- `404 Not Found`\n- `400 Bad Request`",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 24,
+    "fields": {
+      "module": 16,
+      "title": "Writing Your First Test",
+      "slug": "writing-your-first-test",
+      "content": "# Writing Your First Test\n\nA test is a function that asserts behavior.\n\n```python\ndef test_addition():\n    assert 1 + 1 == 2\n```\n\nRun tests with `pytest` or `python -m unittest`.",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 25,
+    "fields": {
+      "module": 17,
+      "title": "Mocks and Patches",
+      "slug": "mocks-and-patches",
+      "content": "# Mocks and Patches\n\nMocks replace real objects in tests to isolate behavior and avoid side effects.\n\n```python\nfrom unittest.mock import Mock\n\nmock = Mock()\nmock.return_value = 42\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 26,
+    "fields": {
+      "module": 18,
+      "title": "ls, cd, pwd",
+      "slug": "ls-cd-pwd",
+      "content": "# ls, cd, pwd\n\nBasic navigation commands:\n\n- `ls` — list files\n- `cd` — change directory\n- `pwd` — print current directory\n\n```bash\npwd\nls -la\ncd /var/log\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 27,
+    "fields": {
+      "module": 18,
+      "title": "File Permissions",
+      "slug": "file-permissions",
+      "content": "# File Permissions\n\n- `chmod` — change file mode\n- `chown` — change owner\n\nPermissions are `rwx` for user, group, and others.\n\n```bash\nchmod 755 script.sh\n```",
+      "order": 2
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 28,
+    "fields": {
+      "module": 19,
+      "title": "The Pipe Operator",
+      "slug": "the-pipe-operator",
+      "content": "# The Pipe Operator\n\nThe `|` operator sends stdout of one command to stdin of another.\n\n```bash\nls -la | grep \".py\"\ncat file.txt | wc -l\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 29,
+    "fields": {
+      "module": 20,
+      "title": "Environment Variables",
+      "slug": "environment-variables",
+      "content": "# Environment Variables\n\nEnvironment variables configure apps without changing code.\n\n```python\nimport os\n\nsecret = os.environ.get('SECRET_KEY')\n```\n\nSet in shell:\n\n```bash\nexport SECRET_KEY=\"abc123\"\n```",
+      "order": 1
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 30,
+    "fields": {
+      "module": 21,
+      "title": "Continuous Integration",
+      "slug": "continuous-integration",
+      "content": "# Continuous Integration\n\nCI runs tests automatically on every push. Catches regressions early.\n\nCommon CI providers:\n\n- GitHub Actions\n- GitLab CI\n- CircleCI",
+      "order": 1
+    }
+  }
+]

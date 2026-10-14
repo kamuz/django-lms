@@ -1,0 +1,42 @@
+[
+  {
+    "model": "courses.category",
+    "pk": 1,
+    "fields": {
+      "title": "Programming",
+      "slug": "programming"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 2,
+    "fields": {
+      "title": "Web Development",
+      "slug": "web-development"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 3,
+    "fields": {
+      "title": "Databases",
+      "slug": "databases"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 4,
+    "fields": {
+      "title": "DevOps",
+      "slug": "devops"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 5,
+    "fields": {
+      "title": "Tools",
+      "slug": "tools"
+    }
+  }
+]
