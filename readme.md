@@ -4,7 +4,8 @@
 
 - Кроки йдуть послідовно: частина коду в наступних кроках доповнює попередню
 - Ранні кроки містять навчальні фрагменти; повні актуальні Python-файли наведені в додатку наприкінці README.
-- Повні HTML-шаблони наведені у кроках 19–20, а всі п’ять JSON-fixture — у кроці 8.
+- Фінальні HTML-шаблони наведені у кроках 19–20 і синхронізовані з файлами репозиторію; ранні HTML-приклади — проміжні навчальні версії.
+- П’ять JSON-fixture у кроці 8 — приклади для створення даних; fixture-файлів у поточному репозиторії немає.
 - Якщо ранній приклад відрізняється від повного лістингу, використовуй повний актуальний лістинг.
 - `views.py` і `urls.py` наповнюються **поступово** — по одному контролеру / маршруту за крок
 - Фікстури розбиті по моделях: `categories.json`, `courses.json`, `modules.json`, `lessons.json`, `quizzes.json`
@@ -3470,7 +3471,7 @@ def markdown_safe_filter(value):
 <body class="bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 antialiased">
 
 <header class="sticky top-0 z-30 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-[#2c2c2c]">
-    <div class="max-w-wide mx-auto px-6 h-16 flex items-center gap-6">
+    <div class="max-w-wide mx-auto px-4 h-16 flex items-center gap-6">
         <a href="{% url 'courses:course_list' %}" class="flex items-center gap-2 font-semibold text-lg hover:text-accent transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" class="w-7 h-7 text-accent">
                 <path d="M4 8c4-2 8-2 12 0v18c-4-2-8-2-12 0V8z" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
@@ -3682,7 +3683,7 @@ function toggleTheme() {
 
 ### 20.2 Повні шаблони
 
-Нижче наведені повні актуальні версії решти шаблонів. Шлях до кожного файла вказаний у заголовку.
+Нижче наведені повні версії решти шаблонів, звірені з однойменними файлами у репозиторії. Шлях до кожного файла вказаний у заголовку.
 
 
 #### `courses/templates/courses/course_detail.html`
@@ -4070,7 +4071,7 @@ function toggleReply(event, id) {
 
 {% block content_full %}
 <div class="max-w-page mx-auto px-4 py-8">
-    <h1 class="text-3xl font-semibold mb-6 pb-2 border-b border-gray-200 dark:border-[#2c2c2c]">{{ quiz.title }}</h1>
+    <h1 class="text-3xl font-semibold mb-6 pb-2">{{ quiz.title }}</h1>
 
     <form method="post" action="{{ submit_url }}" class="space-y-6">
     {% csrf_token %}
@@ -4118,7 +4119,7 @@ function toggleReply(event, id) {
 
 {% block content_full %}
 <div class="max-w-page mx-auto px-4 py-8">
-    <h1 class="text-3xl font-semibold mb-4 pb-2 border-b border-gray-200 dark:border-[#2c2c2c]">
+    <h1 class="text-3xl font-semibold mb-4 pb-2">
         {{ attempt.quiz.title }}
     </h1>
 
@@ -4306,7 +4307,7 @@ function toggleReply(event, id) {
 {% block content_full %}
 <div class="max-w-page mx-auto px-4 py-8">
     <div class="max-w-sm mx-auto mt-8">
-        <h1 class="text-3xl font-semibold mb-6 pb-2 border-b border-gray-200 dark:border-[#2c2c2c]">Login</h1>
+        <h1 class="text-3xl font-semibold mb-6 pb-2">Login</h1>
 
         <form method="post" class="space-y-5">
             {% csrf_token %}
@@ -4367,7 +4368,7 @@ function toggleReply(event, id) {
 {% block content_full %}
 <div class="max-w-page mx-auto px-4 py-8">
     <div class="max-w-sm mx-auto mt-8">
-        <h1 class="text-3xl font-semibold mb-6 pb-2 border-b border-gray-200 dark:border-[#2c2c2c]">Register</h1>
+        <h1 class="text-3xl font-semibold mb-6 pb-2">Register</h1>
 
         <form method="post" class="space-y-5">
             {% csrf_token %}
