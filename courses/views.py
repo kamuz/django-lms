@@ -16,14 +16,14 @@ def course_list(request):
     category_slug = request.GET.get('category')
     categories = Category.objects.annotate(course_count=Count('courses'))
 
+    courses_qs = Course.objects.annotate(lesson_count=Count('modules__lessons'))
+
     if category_slug:
-        courses_qs = Course.objects.filter(category__slug=category_slug)
-    else:
-        courses_qs = Course.objects.all()
+        courses_qs = courses_qs.filter(category__slug=category_slug)
 
     total_count = Course.objects.count()
 
-    paginator = Paginator(courses_qs, 10)
+    paginator = Paginator(courses_qs, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -33,7 +33,6 @@ def course_list(request):
         'selected_category': category_slug,
         'total_count': total_count,
     })
-
 
 @login_required
 def course_detail(request, course_slug):
